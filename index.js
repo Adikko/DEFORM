@@ -8,7 +8,6 @@ let animationDivWidth = document.getElementsByClassName("animation")[0].clientWi
 let animationDimensions = () => {
     animationDivHeight = document.getElementsByClassName("animation")[0].clientHeight;
     animationDivWidth = document.getElementsByClassName("animation")[0].clientWidth;
-    console.log(animationDivHeight, animationDivWidth)
 }
 
 //this portion of the code listens to events tied with resizing the window. This is what makes the site responsive.
@@ -53,10 +52,14 @@ mtlLoader.load('./3D/opened_no_modifier.mtl', function(materials) {
 
 });
 
+//background color
+scene.background = new THREE.Color( 0xff0000 );
+
 //renderer
 let canvas = document.getElementsByClassName("webgl")[0];
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
+    canvas: canvas,
+    antialias: true
 });
 
 renderer.setClearColor(0x000000);
@@ -70,12 +73,6 @@ const tick = () => {
 
   //measuring time
   const elapsedTime = clock.getElapsedTime();
-
-  //animation
-  /*
-  mesh.position.x = Math.sin(elapsedTime) * 2;
-  mesh.position.y = Math.cos(elapsedTime) * 2;
-  */
  
   if (mesh !== null) {
     mesh.rotation.x = Math.sin(elapsedTime) * 1;
@@ -88,21 +85,3 @@ const tick = () => {
 }
   
 tick();
-
-/*
-animate();
-
-function animate() {
-
-  requestAnimationFrame(animate);
-
-  if (mesh !== null) {
-    mesh.rotation.x += 0.01;
-    //mesh.rotation.y += 0.008;
-  }
-
-  renderer.render(scene, camera);
-
-}
-
-*/

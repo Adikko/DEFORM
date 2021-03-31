@@ -93,6 +93,7 @@ h3 {
   height: 100vh;
   background-color: white;
   float: right;
+  z-index: 1;
 }
 
 @media (orientation: portrait) {
