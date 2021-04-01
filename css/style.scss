@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    user-select: none; //the user can't copy the text now
 }
 
 @font-face {
@@ -16,10 +17,6 @@
 @font-face {
     font-family: "Poppins-ExtraLight";
     src: url("/Poppins/Poppins-ExtraLight.ttf");
-}
-
-#canvas {
-    width: 100%;
 }
 
 h1 {
@@ -54,39 +51,49 @@ h3 {
     height: 100vh;
     @media (orientation: portrait) {
         width: 100vw;
-        height: 50vh;
+        height: 100vh;
     }
     float: left;
+    background-color: #93FAA5;
 }
 
-#animationCanvas {
-    z-index: 999;
-    width: 50vw;
-    height: 100vh;
-    @media (orientation: portrait) {
-        width: 100vw;
-        height: 50vh;
-    }
+.webgl {
+    animation-name: landingPage_fade;
+    animation-duration: 5s;
+    opacity: 40%; //animation stays foggy
 }
 
 .dictionary {
     width: 40vw;
     height: 100vh;
+    background-color: #FAC387;
     @media (orientation: portrait) {
         width: 100vw;
         height: 50vh;
+        background-color: rgba($color: #000000, $alpha: 0.0);
     }
-    background-color: #FAC387;
     float: right;
     z-index: 1;
+}
+
+.logoLandingPage {
+    width: 20vh;
+    padding-bottom: 5vh;
 }
 
 .dictionaryText {
     margin: calc(3vw + 3vh);
 }
 
+.dictionaryTextLowerFields {
+    @media (orientation: portrait) {
+        display: none;
+    }
+}
+
 #phonetic {
     font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5vh;
 }
 
 .dictionaryTextDefinitions {
@@ -115,3 +122,12 @@ h3 {
 .cookiesText > #cookiesBold {
     font-size: calc(0.4vh + 0.4vw);
 }
+
+@keyframes landingPage_fade {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 40%; //this way the animation stays foggy
+    }
+  }

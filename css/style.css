@@ -1,6 +1,10 @@
 * {
   padding: 0;
   margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 @font-face {
@@ -16,10 +20,6 @@
 @font-face {
   font-family: "Poppins-ExtraLight";
   src: url("/Poppins/Poppins-ExtraLight.ttf");
-}
-
-#canvas {
-  width: 100%;
 }
 
 h1 {
@@ -66,26 +66,22 @@ h3 {
   width: 60vw;
   height: 100vh;
   float: left;
+  background-color: #93FAA5;
 }
 
 @media (orientation: portrait) {
   .animation {
     width: 100vw;
-    height: 50vh;
+    height: 100vh;
   }
 }
 
-#animationCanvas {
-  z-index: 999;
-  width: 50vw;
-  height: 100vh;
-}
-
-@media (orientation: portrait) {
-  #animationCanvas {
-    width: 100vw;
-    height: 50vh;
-  }
+.webgl {
+  -webkit-animation-name: landingPage_fade;
+          animation-name: landingPage_fade;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  opacity: 40%;
 }
 
 .dictionary {
@@ -100,15 +96,28 @@ h3 {
   .dictionary {
     width: 100vw;
     height: 50vh;
+    background-color: rgba(0, 0, 0, 0);
   }
+}
+
+.logoLandingPage {
+  width: 20vh;
+  padding-bottom: 5vh;
 }
 
 .dictionaryText {
   margin: calc(3vw + 3vh);
 }
 
+@media (orientation: portrait) {
+  .dictionaryTextLowerFields {
+    display: none;
+  }
+}
+
 #phonetic {
   font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 5vh;
 }
 
 .dictionaryTextDefinitions {
@@ -146,5 +155,23 @@ h3 {
 
 .cookiesText > #cookiesBold {
   font-size: calc(0.4vh + 0.4vw);
+}
+
+@-webkit-keyframes landingPage_fade {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 40%;
+  }
+}
+
+@keyframes landingPage_fade {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 40%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

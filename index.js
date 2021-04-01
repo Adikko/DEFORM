@@ -19,18 +19,22 @@ const sizes = {
     height: animationDivHeight
 }
 
+//scene
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(90, sizes.width / sizes.height, 1, 2000);
-camera.position.z = 250;
+//camera
+const camera = new THREE.OrthographicCamera( animationDivWidth / - 5, animationDivWidth / 5, animationDivHeight / 5, animationDivHeight / - 5, 0, 1000 );
+camera.position.z = 300;
 camera.lookAt(scene.position);
 
-const directionalLight = new THREE.DirectionalLight(0xffeedd);
-directionalLight.position.set(0, 0, 1).normalize();
+//light
+const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+directionalLight.position.set(1, 1, 5).normalize();
 scene.add(directionalLight);
 
 // model
 let mesh = null; //global variable
+let mesh2 = null;
 
 const mtlLoader = new THREE.MTLLoader();
 mtlLoader.load('./3D/opened_no_modifier.mtl', function(materials) {
@@ -46,7 +50,32 @@ mtlLoader.load('./3D/opened_no_modifier.mtl', function(materials) {
     mesh.scale.x = 10;
     mesh.scale.y = 10;
     mesh.scale.z = 10;
+    mesh.rotation.x = Math.PI * 0.25;
+    mesh.rotation.y = Math.PI * 0.25;
     scene.add(mesh);
+
+  });
+
+});
+
+mtlLoader.load('./3D/opened_no_modifier_orange.mtl', function(materials) {
+
+  materials.preload();
+
+  const objLoader = new THREE.OBJLoader();
+  objLoader.setMaterials(materials);
+  objLoader.load('./3D/opened_no_modifier_orange.obj', function(object) {
+
+    mesh2 = object; //accessing the global variable
+    mesh2.position.y = 40;
+    mesh2.position.x = 40;
+    mesh2.position.z = 90;
+    mesh2.scale.x = 5;
+    mesh2.scale.y = 5;
+    mesh2.scale.z = 5;
+    mesh2.rotation.x = Math.PI * 0.25;
+    mesh2.rotation.y = Math.PI * 0.25;
+    scene.add(mesh2);
 
   });
 
@@ -73,15 +102,13 @@ const tick = () => {
 
   //measuring time
   const elapsedTime = clock.getElapsedTime();
- 
+
   if (mesh !== null) {
-    mesh.rotation.x = Math.sin(elapsedTime) * 1;
-    mesh.rotation.y = Math.cos(elapsedTime) * 4;
-    /* //the following commented lines have an interesting quality of creating a new model each tick. This proves useful while trying to achieve artistic rendition on one's vision. It's not as easy on the gpu after a few secounds though. Saving this for future use, maybe limit the amount of ticks somehow?
-    let mesh2 = mesh.clone();
-    mesh2.rotation.x = Math.sin(elapsedTime) * 1;
-    scene.add(mesh2);
-    */
+    mesh.scale.y = mesh.scale.y + 0.1;
+  }
+
+  if (mesh2 !== null) {
+    mesh2.scale.y = mesh2.scale.y + 0.2;
   }
 
   //render
