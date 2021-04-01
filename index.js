@@ -67,14 +67,14 @@ mtlLoader.load('./3D/opened_no_modifier_orange.mtl', function(materials) {
   objLoader.load('./3D/opened_no_modifier_orange.obj', function(object) {
 
     mesh2 = object; //accessing the global variable
-    mesh2.position.y = 40;
-    mesh2.position.x = 40;
-    mesh2.position.z = 90;
+    mesh2.position.y = 60;
+    mesh2.position.x = 50;
+    mesh2.position.z = -90;
     mesh2.scale.x = 5;
     mesh2.scale.y = 5;
     mesh2.scale.z = 5;
     mesh2.rotation.x = Math.PI * 0.25;
-    mesh2.rotation.y = Math.PI * 0.25;
+    mesh2.rotation.y = Math.PI * -0.25;
     scene.add(mesh2);
 
   });

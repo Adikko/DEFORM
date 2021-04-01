@@ -27,7 +27,7 @@ h1 {
 
 h2 {
     font-family: "Poppins-Medium", sans-serif;
-    font-size: calc(1vh + 1vw);
+    font-size: calc(0.85vh + 0.85vw);
     color: #d04747;
 }
 
@@ -78,7 +78,7 @@ h3 {
 
 .logoLandingPage {
     width: 20vh;
-    padding-bottom: 5vh;
+    padding-bottom: 2vh;
 }
 
 .dictionaryText {
@@ -93,6 +93,7 @@ h3 {
 
 #phonetic {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(1vh+1vw);
     padding-bottom: 5vh;
 }
 
@@ -114,7 +115,7 @@ h3 {
 }
 
 .cookiesText {
-    margin: calc(3vw + 3vh);
+    margin: 0 calc(3vw + 3vh) calc(3vw + 3vh) 0;
     position: absolute;
     bottom: 0px;
 }
