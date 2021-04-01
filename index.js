@@ -53,7 +53,7 @@ mtlLoader.load('./3D/opened_no_modifier.mtl', function(materials) {
 });
 
 //background color
-scene.background = new THREE.Color( 0xff0000 );
+scene.background = new THREE.Color( 0x93FAA5 );
 
 //renderer
 let canvas = document.getElementsByClassName("webgl")[0];
@@ -76,7 +76,12 @@ const tick = () => {
  
   if (mesh !== null) {
     mesh.rotation.x = Math.sin(elapsedTime) * 1;
-    mesh.rotation.y = Math.cos(elapsedTime) * 0.5;
+    mesh.rotation.y = Math.cos(elapsedTime) * 4;
+    /* //the following commented lines have an interesting quality of creating a new model each tick. This proves useful while trying to achieve artistic rendition on one's vision. It's not as easy on the gpu after a few secounds though. Saving this for future use, maybe limit the amount of ticks somehow?
+    let mesh2 = mesh.clone();
+    mesh2.rotation.x = Math.sin(elapsedTime) * 1;
+    scene.add(mesh2);
+    */
   }
 
   //render
