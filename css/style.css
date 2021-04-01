@@ -159,19 +159,25 @@ h3 {
 }
 
 @-webkit-keyframes landingPage_fade {
-  from {
+  0% {
     opacity: 0%;
   }
-  to {
+  10% {
+    opacity: 0%;
+  }
+  100% {
     opacity: 40%;
   }
 }
 
 @keyframes landingPage_fade {
-  from {
+  0% {
     opacity: 0%;
   }
-  to {
+  10% {
+    opacity: 0%;
+  }
+  100% {
     opacity: 40%;
   }
 }

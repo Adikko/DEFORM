@@ -23,7 +23,7 @@ const sizes = {
 const scene = new THREE.Scene();
 
 //camera
-const camera = new THREE.OrthographicCamera( animationDivWidth / - 5, animationDivWidth / 5, animationDivHeight / 5, animationDivHeight / - 5, 0, 1000 );
+const camera = new THREE.OrthographicCamera( animationDivWidth / - 5, animationDivWidth / 5, animationDivHeight / 5, animationDivHeight / - 5, 0, 5000 );
 camera.position.z = 300;
 camera.lookAt(scene.position);
 
@@ -35,6 +35,8 @@ scene.add(directionalLight);
 // model
 let mesh = null; //global variable
 let mesh2 = null;
+let mesh3 = null;
+let mesh4 = null;
 
 const mtlLoader = new THREE.MTLLoader();
 mtlLoader.load('./3D/opened_no_modifier.mtl', function(materials) {
@@ -81,6 +83,29 @@ mtlLoader.load('./3D/opened_no_modifier_orange.mtl', function(materials) {
 
 });
 
+mtlLoader.load('./3D/closed_no_modifier_purple.mtl', function(materials) {
+
+  materials.preload();
+
+  const objLoader = new THREE.OBJLoader();
+  objLoader.setMaterials(materials);
+  objLoader.load('./3D/closed_no_modifier_purple.obj', function(object) {
+
+    mesh3 = object; //accessing the global variable
+    mesh3.position.y = 40;
+    mesh3.position.x = -80;
+    mesh3.position.z = -90;
+    mesh3.scale.x = 40;
+    mesh3.scale.y = 40;
+    mesh3.scale.z = 40;
+    mesh3.rotation.x = Math.PI * 0.25;
+    mesh3.rotation.y = Math.PI * 0.25;
+    scene.add(mesh3);
+
+  });
+
+});
+
 //background color
 scene.background = new THREE.Color( 0x93FAA5 );
 
@@ -109,6 +134,10 @@ const tick = () => {
 
   if (mesh2 !== null) {
     mesh2.scale.y = mesh2.scale.y + 0.2;
+  }
+
+  if (mesh3 !== null) {
+    mesh3.scale.y = mesh3.scale.y + 1;
   }
 
   //render
