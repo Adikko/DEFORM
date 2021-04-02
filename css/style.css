@@ -40,7 +40,7 @@ h3 {
   color: #d04747;
 }
 
-.landing {
+.deform_landing_landing {
   /* using flexbox to space around the two divs */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,7 +54,7 @@ h3 {
 }
 
 @media (orientation: portrait) {
-  .landing {
+  .deform_landing_landing {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -62,7 +62,7 @@ h3 {
   }
 }
 
-.animation {
+.deform_landing_animation {
   width: 60vw;
   height: 100vh;
   float: left;
@@ -70,13 +70,13 @@ h3 {
 }
 
 @media (orientation: portrait) {
-  .animation {
+  .deform_landing_animation {
     width: 100vw;
     height: 100vh;
   }
 }
 
-.webgl {
+.deform_landing_webgl {
   -webkit-animation-name: landingPage_fade;
           animation-name: landingPage_fade;
   -webkit-animation-duration: 5s;
@@ -84,7 +84,7 @@ h3 {
   opacity: 40%;
 }
 
-.dictionary {
+.deform_landing_dictionary {
   width: 40vw;
   height: 100vh;
   background-color: #FAC387;
@@ -93,35 +93,35 @@ h3 {
 }
 
 @media (orientation: portrait) {
-  .dictionary {
+  .deform_landing_dictionary {
     width: 100vw;
     height: 50vh;
     background-color: rgba(0, 0, 0, 0);
   }
 }
 
-.logoLandingPage {
+.deform_landing_logoLandingPage {
   width: 20vh;
   padding-bottom: 2vh;
 }
 
-.dictionaryText {
+.deform_landing_dictionaryText {
   margin: calc(3vw + 3vh);
 }
 
 @media (orientation: portrait) {
-  .dictionaryTextLowerFields {
+  .deform_landing_dictionaryTextLowerFields {
     display: none;
   }
 }
 
-#phonetic {
+#deform_landing_phonetic {
   font-family: Arial, Helvetica, sans-serif;
   font-size: calc(1vh+1vw);
   padding-bottom: 5vh;
 }
 
-.dictionaryTextDefinitions {
+.deform_landing_dictionaryTextDefinitions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,22 +139,22 @@ h3 {
           align-items: baseline;
 }
 
-.dictionaryTextDefinitions > .dictionaryTextDefinitionsNumber {
+.deform_landing_dictionaryTextDefinitions > .deform_landing_dictionaryTextDefinitionsNumber {
   width: 3vw;
   font-size: calc(0.5vh + 0.5vw);
 }
 
-.dictionaryTextDefinitions > .italics {
+.deform_landing_dictionaryTextDefinitions > .deform_landing_italics {
   font-style: italic;
 }
 
-.cookiesText {
+.deform_landing_cookiesText {
   margin: 0 calc(3vw + 3vh) calc(3vw + 3vh) 0;
   position: absolute;
   bottom: 0px;
 }
 
-.cookiesText > #cookiesBold {
+.deform_landing_cookiesText > #deform_landing_cookiesBold {
   font-size: calc(0.4vh + 0.4vw);
 }
 

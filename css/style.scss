@@ -37,7 +37,7 @@ h3 {
     color: #d04747;
 }
 
-.landing { /* using flexbox to space around the two divs */
+.deform_landing_landing { /* using flexbox to space around the two divs */
     display: flex;
     @media (orientation: portrait) {
         flex-direction: column-reverse;
@@ -46,7 +46,7 @@ h3 {
     justify-content: space-around;
 }
 
-.animation {
+.deform_landing_animation {
     width: 60vw;
     height: 100vh;
     @media (orientation: portrait) {
@@ -57,13 +57,13 @@ h3 {
     background-color: #93FAA5;
 }
 
-.webgl {
+.deform_landing_webgl {
     animation-name: landingPage_fade;
     animation-duration: 5s;
     opacity: 40%; //animation stays foggy
 }
 
-.dictionary {
+.deform_landing_dictionary {
     width: 40vw;
     height: 100vh;
     background-color: #FAC387;
@@ -76,28 +76,28 @@ h3 {
     z-index: 1;
 }
 
-.logoLandingPage {
+.deform_landing_logoLandingPage {
     width: 20vh;
     padding-bottom: 2vh;
 }
 
-.dictionaryText {
+.deform_landing_dictionaryText {
     margin: calc(3vw + 3vh);
 }
 
-.dictionaryTextLowerFields {
+.deform_landing_dictionaryTextLowerFields {
     @media (orientation: portrait) {
         display: none;
     }
 }
 
-#phonetic {
+#deform_landing_phonetic {
     font-family: Arial, Helvetica, sans-serif;
     font-size: calc(1vh+1vw);
     padding-bottom: 5vh;
 }
 
-.dictionaryTextDefinitions {
+.deform_landing_dictionaryTextDefinitions {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -105,22 +105,22 @@ h3 {
     align-items: baseline;
 }
 
-.dictionaryTextDefinitions > .dictionaryTextDefinitionsNumber {
+.deform_landing_dictionaryTextDefinitions > .deform_landing_dictionaryTextDefinitionsNumber {
     width: 3vw;
     font-size: calc(0.5vh + 0.5vw);
 }
 
-.dictionaryTextDefinitions > .italics {
+.deform_landing_dictionaryTextDefinitions > .deform_landing_italics {
     font-style: italic;
 }
 
-.cookiesText {
+.deform_landing_cookiesText {
     margin: 0 calc(3vw + 3vh) calc(3vw + 3vh) 0;
     position: absolute;
     bottom: 0px;
 }
 
-.cookiesText > #cookiesBold {
+.deform_landing_cookiesText > #deform_landing_cookiesBold {
     font-size: calc(0.4vh + 0.4vw);
 }
 

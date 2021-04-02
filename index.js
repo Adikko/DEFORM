@@ -1,13 +1,13 @@
 //this portion of the code fetches the div width and height. It's necessary to get this data in order to render correct scene dimensions for the site (and the 3D scene) to be responsive
 
 //variables need to be defined globally, so the code can access the values assigned to them later on. They get the original div size assigned to them, because not everyone resizes their window (especially on mobile)
-let animationDivHeight = document.getElementsByClassName("animation")[0].clientHeight;
-let animationDivWidth = document.getElementsByClassName("animation")[0].clientWidth;
+let animationDivHeight = document.getElementsByClassName("deform_landing_animation")[0].clientHeight;
+let animationDivWidth = document.getElementsByClassName("deform_landing_animation")[0].clientWidth;
 
 //this function is defined in order to access it when the window changes its dimensions
 let animationDimensions = () => {
-    animationDivHeight = document.getElementsByClassName("animation")[0].clientHeight;
-    animationDivWidth = document.getElementsByClassName("animation")[0].clientWidth;
+    animationDivHeight = document.getElementsByClassName("deform_landing_animation")[0].clientHeight;
+    animationDivWidth = document.getElementsByClassName("deform_landing_animation")[0].clientWidth;
 }
 
 //this portion of the code listens to events tied with resizing the window. This is what makes the site responsive.
@@ -18,6 +18,8 @@ const sizes = {
     width: animationDivWidth,
     height: animationDivHeight
 }
+
+//this part of the file is dedidated to THREE.js
 
 //scene
 const scene = new THREE.Scene();
@@ -33,10 +35,9 @@ directionalLight.position.set(1, 1, 5).normalize();
 scene.add(directionalLight);
 
 // model
-let mesh = null; //global variable
+let mesh = null; //global variables
 let mesh2 = null;
-let mesh3 = null;
-let mesh4 = null;
+let logo_closed_anim = null;
 
 const mtlLoader = new THREE.MTLLoader();
 mtlLoader.load('./3D/opened_no_modifier.mtl', function(materials) {
@@ -48,7 +49,9 @@ mtlLoader.load('./3D/opened_no_modifier.mtl', function(materials) {
   objLoader.load('./3D/opened_no_modifier.obj', function(object) {
 
     mesh = object; //accessing the global variable
-    mesh.position.y = 0;
+    mesh.position.x = 100;
+    mesh.position.y = 100;
+    mesh.position.z = -100;
     mesh.scale.x = 10;
     mesh.scale.y = 10;
     mesh.scale.z = 10;
@@ -68,7 +71,7 @@ mtlLoader.load('./3D/opened_no_modifier_orange.mtl', function(materials) {
   objLoader.setMaterials(materials);
   objLoader.load('./3D/opened_no_modifier_orange.obj', function(object) {
 
-    mesh2 = object; //accessing the global variable
+    logo = object; //accessing the global variable
     mesh2.position.y = 60;
     mesh2.position.x = 50;
     mesh2.position.z = -90;
@@ -83,24 +86,24 @@ mtlLoader.load('./3D/opened_no_modifier_orange.mtl', function(materials) {
 
 });
 
-mtlLoader.load('./3D/closed_no_modifier_purple.mtl', function(materials) {
+mtlLoader.load('./3D/3d_logo_closed.mtl', function(materials) {
 
   materials.preload();
 
   const objLoader = new THREE.OBJLoader();
   objLoader.setMaterials(materials);
-  objLoader.load('./3D/closed_no_modifier_purple.obj', function(object) {
+  objLoader.load('./3D/3d_logo_closed.obj', function(object) {
 
-    mesh3 = object; //accessing the global variable
-    mesh3.position.y = 40;
-    mesh3.position.x = -80;
-    mesh3.position.z = -90;
-    mesh3.scale.x = 40;
-    mesh3.scale.y = 40;
-    mesh3.scale.z = 40;
-    mesh3.rotation.x = Math.PI * 0.25;
-    mesh3.rotation.y = Math.PI * 0.25;
-    scene.add(mesh3);
+    logo_closed_anim = object; //accessing the global variable
+    logo_closed_anim.position.y = 60;
+    logo_closed_anim.position.x = 0;
+    logo_closed_anim.position.z = 0;
+    logo_closed_anim.scale.x = 30;
+    logo_closed_anim.scale.y = 30;
+    logo_closed_anim.scale.z = 30;
+    logo_closed_anim.rotation.x = Math.PI * 0.25;
+    logo_closed_anim.rotation.y = Math.PI * 0.75;
+    scene.add(logo_closed_anim);
 
   });
 
@@ -110,7 +113,7 @@ mtlLoader.load('./3D/closed_no_modifier_purple.mtl', function(materials) {
 scene.background = new THREE.Color( 0x93FAA5 );
 
 //renderer
-let canvas = document.getElementsByClassName("webgl")[0];
+let canvas = document.getElementsByClassName("deform_landing_webgl")[0];
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
     antialias: true
@@ -129,15 +132,16 @@ const tick = () => {
   const elapsedTime = clock.getElapsedTime();
 
   if (mesh !== null) {
-    mesh.scale.y = mesh.scale.y + 0.1;
+    mesh.scale.y = mesh.scale.y + 0.05;
   }
 
   if (mesh2 !== null) {
     mesh2.scale.y = mesh2.scale.y + 0.2;
   }
 
-  if (mesh3 !== null) {
-    mesh3.scale.y = mesh3.scale.y + 1;
+  if (logo_closed_anim !== null) {
+    logo_closed_anim.scale.y = (Math.cos(elapsedTime) + Math.PI) * 40;
+    logo_closed_anim.rotation.y = logo_closed_anim.rotation.y + 0.005;
   }
 
   //render
