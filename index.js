@@ -134,7 +134,7 @@ const tick = () => {
   //measuring time
   const elapsedTime = clock.getElapsedTime();
 
-  if (seconds % 5 === 0) { //this is a fun one; depending on the division remainder we choose different animations!
+  if (seconds % 5 === 0) { //this is a fun one; depending on the division remainder we pick different animations!
     if (logo_opened !== null) {
       if (elapsedTime < 10) { //limiting the final y scale of the mesh (by using a set amount of secounds), so it doesn't render indefinately
         scene.add(logo_opened);
