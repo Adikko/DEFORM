@@ -22,19 +22,13 @@
   src: url("/src/Poppins/Poppins-ExtraLight.ttf");
 }
 
-h1 {
-  font-family: "Poppins-Black", sans-serif;
-  font-size: calc(2vh + 2vw);
-  color: #d04747;
-}
-
-h2 {
+.deform_landing_h2 {
   font-family: "Poppins-Medium", sans-serif;
   font-size: calc(0.85vh + 0.85vw);
   color: #d04747;
 }
 
-h3 {
+.deform_landing_h3 {
   font-family: "Poppins-ExtraLight", sans-serif;
   font-size: calc(0.7vh + 0.7vw);
   color: #d04747;
@@ -63,7 +57,7 @@ h3 {
 }
 
 .deform_landing_animation {
-  width: 60vw;
+  width: 65vw;
   height: 100vh;
   float: left;
   background-color: #93FAA5;
@@ -85,7 +79,7 @@ h3 {
 }
 
 .deform_landing_dictionary {
-  width: 40vw;
+  width: 35vw;
   height: 100vh;
   background-color: #FAC387;
   float: right;
@@ -101,8 +95,9 @@ h3 {
 }
 
 .deform_landing_logoLandingPage {
-  width: 20vh;
-  padding-bottom: 2vh;
+  width: 15vw;
+  padding-bottom: 8vh;
+  pointer-events: none;
 }
 
 .deform_landing_dictionaryText {
@@ -117,8 +112,10 @@ h3 {
 
 #deform_landing_phonetic {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: calc(1vh+1vw);
-  padding-bottom: 5vh;
+  font-weight: 900;
+  font-size: calc(1.2vh + 1.2vw);
+  padding-bottom: 2vh;
+  color: #d04747;
 }
 
 .deform_landing_dictionaryTextDefinitions {
@@ -142,20 +139,27 @@ h3 {
 .deform_landing_dictionaryTextDefinitions > .deform_landing_dictionaryTextDefinitionsNumber {
   width: 3vw;
   font-size: calc(0.5vh + 0.5vw);
+  font-family: "Poppins-ExtraLight", sans-serif;
+  color: #d04747;
 }
 
 .deform_landing_dictionaryTextDefinitions > .deform_landing_italics {
   font-style: italic;
+  font-family: "Poppins-ExtraLight", sans-serif;
+  font-size: calc(0.7vh + 0.7vw);
+  color: #d04747;
 }
 
 .deform_landing_cookiesText {
-  margin: 0 calc(3vw + 3vh) calc(3vw + 3vh) 0;
+  margin: 0 calc(3vw + 3vh) calc(1vw + 1vh) 0;
   position: absolute;
   bottom: 0px;
+  font-family: "Poppins-ExtraLight", sans-serif;
+  color: #d04747;
 }
 
 .deform_landing_cookiesText > #deform_landing_cookiesBold {
-  font-size: calc(0.4vh + 0.4vw);
+  font-size: calc(0.3vh + 0.3vw);
 }
 
 @-webkit-keyframes landingPage_fade {
