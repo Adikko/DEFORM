@@ -35,12 +35,21 @@ directionalLight.position.set(1, 1, 5).normalize();
 scene.add(directionalLight);
 
 // model
-let logo_opened = null; //global variables
-let logo_opened_copy1 = null;
+let logo_opened_purple = null; //global variables
+let logo_opened_teal = null;
+let logo_opened_yellow = null;
+let logo_opened_rose = null;
+let logo_opened_red = null;
+let logo_big = null;
 let logo_closed_anim = null;
+let logo_closed_rose = null;
+let logo_closed_orange = null;
+let logo_closed_red = null;
+let logo_closed_yellow = null;
 
 const mtlLoader = new THREE.MTLLoader();
-mtlLoader.load('./3D/3d_logo_opened.mtl', function(materials) {
+
+mtlLoader.load('./3D/3d_logo_closed.mtl', function(materials) {
 
   materials.preload();
 
@@ -48,16 +57,103 @@ mtlLoader.load('./3D/3d_logo_opened.mtl', function(materials) {
   objLoader.setMaterials(materials);
   objLoader.load('./3D/3d_logo_opened.obj', function(object) {
 
-    logo_opened = object; //accessing the global variable
-    logo_opened.position.x = 110;
-    logo_opened.position.y = -50;
-    logo_opened.position.z = -100;
-    logo_opened.scale.x = 10;
-    logo_opened.scale.y = 10;
-    logo_opened.scale.z = 10;
-    logo_opened.rotation.x = Math.PI * 0.25;
-    logo_opened.rotation.y = Math.PI * 0.25;
-    //scene.add(logo_opened);
+    logo_opened_purple = object; //accessing the global variable
+    logo_opened_purple.position.x = -10;
+    logo_opened_purple.position.y = 0;
+    logo_opened_purple.position.z = 0;
+    logo_opened_purple.scale.x = 10;
+    logo_opened_purple.scale.y = 10;
+    logo_opened_purple.scale.z = 10;
+    logo_opened_purple.rotation.x = Math.PI * 0.25;
+    logo_opened_purple.rotation.y = Math.PI * -0.25;
+
+  });
+
+});
+
+mtlLoader.load('./3D/3d_logo_opened_teal.mtl', function(materials) {
+
+  materials.preload();
+
+  const objLoader = new THREE.OBJLoader();
+  objLoader.setMaterials(materials);
+  objLoader.load('./3D/3d_logo_opened.obj', function(object) {
+
+    logo_opened_teal = object; //accessing the global variable
+    logo_opened_teal.position.x = 90;
+    logo_opened_teal.position.y = -100;
+    logo_opened_teal.position.z = -300;
+    logo_opened_teal.scale.x = 10;
+    logo_opened_teal.scale.y = 10;
+    logo_opened_teal.scale.z = 10;
+    logo_opened_teal.rotation.x = Math.PI * -0.75;
+    logo_opened_teal.rotation.y = Math.PI * 0.25;
+
+  });
+
+});
+
+mtlLoader.load('./3D/3d_logo_opened_rose.mtl', function(materials) {
+
+  materials.preload();
+
+  const objLoader = new THREE.OBJLoader();
+  objLoader.setMaterials(materials);
+  objLoader.load('./3D/3d_logo_opened.obj', function(object) {
+
+    logo_opened_rose = object; //accessing the global variable
+    logo_opened_rose.position.x = 180;
+    logo_opened_rose.position.y = 100;
+    logo_opened_rose.position.z = -900;
+    logo_opened_rose.scale.x = 10;
+    logo_opened_rose.scale.y = 10;
+    logo_opened_rose.scale.z = 10;
+    logo_opened_rose.rotation.x = Math.PI * 0.25;
+    logo_opened_rose.rotation.y = Math.PI * 0.25;
+
+  });
+
+});
+
+mtlLoader.load('./3D/3d_logo_opened_red.mtl', function(materials) {
+
+  materials.preload();
+
+  const objLoader = new THREE.OBJLoader();
+  objLoader.setMaterials(materials);
+  objLoader.load('./3D/3d_logo_opened.obj', function(object) {
+
+    logo_opened_red = object; //accessing the global variable
+    logo_opened_red.position.x = -90;
+    logo_opened_red.position.y = -100;
+    logo_opened_red.position.z = -300;
+    logo_opened_red.scale.x = 10;
+    logo_opened_red.scale.y = 10;
+    logo_opened_red.scale.z = 10;
+    logo_opened_red.rotation.x = Math.PI * 0.75;
+    logo_opened_red.rotation.y = Math.PI * 0.25;
+
+  });
+
+});
+
+mtlLoader.load('./3D/3d_logo_opened_yellow.mtl', function(materials) {
+
+  materials.preload();
+
+  const objLoader = new THREE.OBJLoader();
+  objLoader.setMaterials(materials);
+  objLoader.load('./3D/3d_logo_opened.obj', function(object) {
+
+    logo_opened_yellow = object; //accessing the global variable
+    logo_opened_yellow.position.x = -180;
+    logo_opened_yellow.position.y = 100;
+    logo_opened_yellow.position.z = -600;
+    logo_opened_yellow.scale.x = 10;
+    logo_opened_yellow.scale.y = 10;
+    logo_opened_yellow.scale.z = 10;
+    logo_opened_yellow.rotation.x = Math.PI * 0.25;
+    logo_opened_yellow.rotation.y = Math.PI * 0.25;
 
   });
 
@@ -71,15 +167,15 @@ mtlLoader.load('./3D/3d_logo_opened_teal.mtl', function(materials) {
   objLoader.setMaterials(materials);
   objLoader.load('./3D/3d_logo_opened_detailed.obj', function(object) {
 
-    logo_opened_copy1 = object;
-    logo_opened_copy1.position.x = 0;
-    logo_opened_copy1.position.y = 30;
-    logo_opened_copy1.position.z = -1000;
-    logo_opened_copy1.scale.x = 50;
-    logo_opened_copy1.scale.y = 200;
-    logo_opened_copy1.scale.z = 50;
-    logo_opened_copy1.rotation.x = Math.PI * 0.25;
-    logo_opened_copy1.rotation.y = Math.PI * 0.75;
+    logo_big = object;
+    logo_big.position.x = 0;
+    logo_big.position.y = 30;
+    logo_big.position.z = -1000;
+    logo_big.scale.x = 50;
+    logo_big.scale.y = 200;
+    logo_big.scale.z = 50;
+    logo_big.rotation.x = Math.PI * 0.25;
+    logo_big.rotation.y = Math.PI * 0.75;
 
   });
 
@@ -94,15 +190,102 @@ mtlLoader.load('./3D/3d_logo_closed.mtl', function(materials) {
   objLoader.load('./3D/3d_logo_closed.obj', function(object) {
 
     logo_closed_anim = object; //accessing the global variable
-    logo_closed_anim.position.y = 10;
+    logo_closed_anim.position.y = 0;
     logo_closed_anim.position.x = 0;
     logo_closed_anim.position.z = 0;
-    logo_closed_anim.scale.x = 30;
-    logo_closed_anim.scale.y = 30;
-    logo_closed_anim.scale.z = 30;
+    logo_closed_anim.scale.x = 75;
+    logo_closed_anim.scale.y = 705;
+    logo_closed_anim.scale.z = 75;
     logo_closed_anim.rotation.x = Math.PI * 0.25;
     logo_closed_anim.rotation.y = Math.PI * 0.75;
-    //scene.add(logo_closed_anim);
+
+  });
+
+});
+
+mtlLoader.load('./3D/3d_logo_closed_rose.mtl', function(materials) {
+
+  materials.preload();
+
+  const objLoader = new THREE.OBJLoader();
+  objLoader.setMaterials(materials);
+  objLoader.load('./3D/3d_logo_closed_rose.obj', function(object) {
+
+    logo_closed_rose = object; //accessing the global variable
+    logo_closed_rose.position.y = 0;
+    logo_closed_rose.position.x = 0;
+    logo_closed_rose.position.z = 0;
+    logo_closed_rose.scale.x = 50;
+    logo_closed_rose.scale.y = 500;
+    logo_closed_rose.scale.z = 50;
+    logo_closed_rose.rotation.x = Math.PI * 0.25;
+    logo_closed_rose.rotation.y = Math.PI * 0.75;
+
+  });
+
+});
+
+mtlLoader.load('./3D/3d_logo_closed_orange.mtl', function(materials) {
+
+  materials.preload();
+
+  const objLoader = new THREE.OBJLoader();
+  objLoader.setMaterials(materials);
+  objLoader.load('./3D/3d_logo_closed_orange.obj', function(object) {
+
+    logo_closed_orange = object; //accessing the global variable
+    logo_closed_orange.position.y = 0;
+    logo_closed_orange.position.x = 0;
+    logo_closed_orange.position.z = 0;
+    logo_closed_orange.scale.x = 45;
+    logo_closed_orange.scale.y = 405;
+    logo_closed_orange.scale.z = 45;
+    logo_closed_orange.rotation.x = Math.PI * 0.25;
+    logo_closed_orange.rotation.y = Math.PI * 0.75;
+
+  });
+
+});
+
+mtlLoader.load('./3D/3d_logo_closed_yellow.mtl', function(materials) {
+
+  materials.preload();
+
+  const objLoader = new THREE.OBJLoader();
+  objLoader.setMaterials(materials);
+  objLoader.load('./3D/3d_logo_closed_yellow.obj', function(object) {
+
+    logo_closed_yellow = object; //accessing the global variable
+    logo_closed_yellow.position.y = 0;
+    logo_closed_yellow.position.x = 0;
+    logo_closed_yellow.position.z = -600;
+    logo_closed_yellow.scale.x = 75;
+    logo_closed_yellow.scale.y = 705;
+    logo_closed_yellow.scale.z = 75;
+    logo_closed_yellow.rotation.x = Math.PI * 0.25;
+    logo_closed_yellow.rotation.y = Math.PI * 0.75;
+
+  });
+
+});
+
+mtlLoader.load('./3D/3d_logo_closed_red.mtl', function(materials) {
+
+  materials.preload();
+
+  const objLoader = new THREE.OBJLoader();
+  objLoader.setMaterials(materials);
+  objLoader.load('./3D/3d_logo_closed_red.obj', function(object) {
+
+    logo_closed_red = object; //accessing the global variable
+    logo_closed_red.position.y = 0;
+    logo_closed_red.position.x = 0;
+    logo_closed_red.position.z = -600;
+    logo_closed_red.scale.x = 90;
+    logo_closed_red.scale.y = 900;
+    logo_closed_red.scale.z = 90;
+    logo_closed_red.rotation.x = Math.PI * 0.25;
+    logo_closed_red.rotation.y = Math.PI * 0.75;
 
   });
 
@@ -131,28 +314,41 @@ const clock = new THREE.Clock(); //importing the clock in order to make the anim
 //animations
 const tick = () => {
 
-  //measuring time
-  const elapsedTime = clock.getElapsedTime();
+//measuring time
+const elapsedTime = clock.getElapsedTime();
 
-  if (seconds % 5 === 0) { //this is a fun one; depending on the division remainder we pick different animations!
-    if (logo_opened !== null) {
-      if (elapsedTime < 10) { //limiting the final y scale of the mesh (by using a set amount of secounds), so it doesn't render indefinately
-        scene.add(logo_opened);
-        logo_opened.scale.y = logo_opened.scale.y + (elapsedTime * 0.05);
-      }
-    }
-  } else if (seconds % 3 === 0) {
-    if (logo_closed_anim !== null) {
-      scene.add(logo_closed_anim);
-      logo_closed_anim.scale.y = (Math.cos(elapsedTime) + Math.PI) * 20;
-      logo_closed_anim.rotation.y = logo_closed_anim.rotation.y + 0.005;
-    }
-  } else {
-    if (logo_opened_copy1 !== null) {
-      scene.add(logo_opened_copy1);
-      logo_opened_copy1.rotation.y = logo_opened_copy1.rotation.y + 0.001;
-    }
+if (seconds % 5 === 0) { //this is a fun one; depending on the division remainder we pick different animations!
+  if (logo_opened_purple !== null && logo_opened_teal !== null && logo_opened_yellow !== null && logo_opened_rose !== null && logo_opened_red !== null) {
+    scene.add(logo_opened_purple);
+    scene.add(logo_opened_teal);
+    scene.add(logo_opened_yellow);
+    scene.add(logo_opened_rose);
+    scene.add(logo_opened_red);
+    logo_opened_purple.scale.y = (Math.sin(elapsedTime*0.5) + (Math.PI * 0.37)) * 100;
+    logo_opened_teal.scale.y = (Math.sin(elapsedTime*0.4) + (Math.PI * 0.37)) * 100;
+    logo_opened_yellow.scale.y = (Math.sin(elapsedTime*0.3) + (Math.PI * 0.37)) * 100;
+    logo_opened_rose.scale.y = (Math.sin(elapsedTime*0.2) + (Math.PI * 0.37)) * 100;
+    logo_opened_red.scale.y = (Math.cos(elapsedTime*0.5) + (Math.PI * 0.37)) * 100;
   }
+} else if (seconds % 3 === 0) {
+  if (logo_closed_anim !== null && logo_closed_rose !== null && logo_closed_orange !== null && logo_closed_yellow !== null && logo_closed_red !== null) {
+    scene.add(logo_closed_anim);
+    scene.add(logo_closed_rose);
+    scene.add(logo_closed_orange);
+    scene.add(logo_closed_yellow);
+    scene.add(logo_closed_red);
+    logo_closed_anim.rotation.y = logo_closed_anim.rotation.y + 0.002;
+    logo_closed_rose.rotation.y = logo_closed_rose.rotation.y + 0.001;
+    logo_closed_orange.rotation.y = logo_closed_orange.rotation.y + 0.001;
+    logo_closed_yellow.rotation.y = logo_closed_yellow.rotation.y + 0.0005;
+    logo_closed_red.rotation.y = logo_closed_red.rotation.y + 0.0005;
+  }
+} else {
+  if (logo_big !== null) {
+    scene.add(logo_big);
+    logo_big.rotation.y = logo_big.rotation.y + 0.001;
+  }
+}
 
   //render
   renderer.render(scene, camera);
