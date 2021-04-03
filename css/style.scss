@@ -6,17 +6,17 @@
 
 @font-face {
     font-family: "Poppins-Black";
-    src: url("/src/Poppins/Poppins-Black.ttf");
+    @import "../src/Poppins/Poppins-Black.ttf";
 }
 
 @font-face {
     font-family: "Poppins-Medium";
-    src: url("/src/Poppins/Poppins-Medium.ttf");
+    src: url("../src/Poppins/Poppins-Medium.ttf");
 }
 
 @font-face {
     font-family: "Poppins-ExtraLight";
-    src: url("/src/Poppins/Poppins-ExtraLight.ttf");
+    src: url("../src/Poppins/Poppins-ExtraLight.ttf");
 }
 
 .deform_landing_h2 {
