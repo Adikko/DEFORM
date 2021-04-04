@@ -5,11 +5,11 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  overflow: hidden;
 }
 
 @font-face {
   font-family: "Poppins-Black";
-  src: url("../src/Poppins/Poppins-Black.ttf");
 }
 
 @font-face {
@@ -88,20 +88,43 @@
 
 @media (orientation: portrait) {
   .deform_landing_dictionary {
+    display: none;
+  }
+}
+
+.deform_landing_logo {
+  width: 35vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  right: 0;
+  z-index: 3;
+}
+
+@media (orientation: portrait) {
+  .deform_landing_logo {
     width: 100vw;
-    height: 50vh;
-    background-color: rgba(0, 0, 0, 0);
+    height: 100vh;
   }
 }
 
 .deform_landing_logoLandingPage {
   width: 15vw;
   padding-bottom: 8vh;
+  margin: calc(3vw + 3vh);
   pointer-events: none;
+}
+
+@media (orientation: portrait) {
+  .deform_landing_logoLandingPage {
+    width: 50vw;
+  }
 }
 
 .deform_landing_dictionaryText {
   margin: calc(3vw + 3vh);
+  position: absolute;
+  top: 30vh;
 }
 
 @media (orientation: portrait) {
@@ -151,7 +174,7 @@
 }
 
 .deform_landing_cookiesText {
-  margin: 0 calc(3vw + 3vh) calc(1vw + 1vh) 0;
+  margin: calc(3vw + 3vh) calc(3vw + 3vh) calc(1vw + 1vh) calc(3vw + 3vh);
   position: absolute;
   bottom: 0px;
   font-family: "Poppins-ExtraLight", sans-serif;
