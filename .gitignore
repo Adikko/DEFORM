@@ -1,4 +1,4 @@
 ignored_files/
 node_modules/
-package-lock.json
+bundler/
 package.json

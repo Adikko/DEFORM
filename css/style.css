@@ -8,6 +8,10 @@
   overflow: hidden;
 }
 
+body, html {
+  height: 100%;
+}
+
 @font-face {
   font-family: "Poppins-Black";
 }
@@ -39,6 +43,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -65,8 +70,9 @@
 
 @media (orientation: portrait) {
   .deform_landing_animation {
+    position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
   }
 }
 
@@ -104,7 +110,7 @@
 @media (orientation: portrait) {
   .deform_landing_logo {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
   }
 }
 
@@ -183,6 +189,12 @@
 
 .deform_landing_cookiesText > #deform_landing_cookiesBold {
   font-size: calc(0.3vh + 0.3vw);
+}
+
+@media (orientation: portrait) {
+  .deform_landing_cookiesText > #deform_landing_cookiesBold {
+    font-size: calc(0.5vh + 0.5vw);
+  }
 }
 
 @-webkit-keyframes landingPage_fade {

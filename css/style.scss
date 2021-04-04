@@ -5,6 +5,10 @@
     overflow: hidden;
 }
 
+body, html {
+    height: 100%;
+}
+
 @font-face {
     font-family: "Poppins-Black";
     @import "../src/Poppins/Poppins-Black.ttf";
@@ -34,6 +38,7 @@
 
 .deform_landing_landing { /* using flexbox to space around the two divs */
     display: flex;
+    height: 100%; //defining the height of parent div to animation div, for correct height on mobile view
     @media (orientation: portrait) {
         flex-direction: column-reverse;
     }
@@ -45,8 +50,9 @@
     width: 65vw;
     height: 100vh;
     @media (orientation: portrait) {
+        position: relative;
         width: 100vw;
-        height: 100vh;
+        height: 100%;
     }
     float: left;
     background-color: #93FAA5;
@@ -76,7 +82,7 @@
     background-color: rgba($color: #000000, $alpha: 0.0);
     @media (orientation: portrait) {
         width: 100vw;
-        height: 100vh;
+        height: 100%;
     }
     right: 0;
     z-index: 3;
@@ -144,6 +150,9 @@
 
 .deform_landing_cookiesText > #deform_landing_cookiesBold {
     font-size: calc(0.3vh + 0.3vw);
+    @media (orientation: portrait) {
+        font-size: calc(0.5vh + 0.5vw);
+    }
 }
 
 @keyframes landingPage_fade {
