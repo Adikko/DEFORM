@@ -292,7 +292,16 @@ mtlLoader.load('./3D/3d_logo_closed_red.mtl', function(materials) {
 });
 
 //background color
-scene.background = new THREE.Color( 0x93FAA5 );
+function darkMode_backgroundChanger(argument) {
+  if (argument.matches) { // If media query matches
+    scene.background = new THREE.Color( 0x461661 );
+  } else {
+    scene.background = new THREE.Color( 0x93FAA5 );
+  }
+}
+let darkMode_checker = window.matchMedia("(prefers-color-scheme: dark)")
+darkMode_backgroundChanger(darkMode_checker) // Call listener function at run time
+
 
 //renderer
 let canvas = document.getElementsByClassName("deform_landing_webgl")[0];
