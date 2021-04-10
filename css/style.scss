@@ -31,6 +31,9 @@ body, html {
         font-size: calc(0.5vh + 0.5vw);
     }
     color: #d04747;
+    @media (prefers-color-scheme: dark) {
+        color: #D28DFA;
+    }
 }
 
 .deform_landing_h3 {
@@ -40,6 +43,9 @@ body, html {
         font-size: calc(0.4vh + 0.4vw);
     }
     color: #d04747;
+    @media (prefers-color-scheme: dark) {
+        color: #D28DFA;
+    }
 }
 
 .deform_landing_landing { /* using flexbox to space around the two divs */
@@ -63,6 +69,9 @@ body, html {
     position: absolute;
     left: 0px;
     background-color: #93FAA5;
+    @media (prefers-color-scheme: dark) {
+        background-color: #461661;
+    }
 }
 
 .deform_landing_webgl {
@@ -97,11 +106,21 @@ canvas {
     pointer-events: none;
 }
 
+.deform_landing_logoLandingPage_svg {
+    fill: #d04747;
+    @media (prefers-color-scheme: dark) {
+        fill: #D28DFA;
+    }
+}
+
 .deform_landing_dictionary {
     width: 35vw;
     height: 100%;
     position: absolute;
     background-color: #FAC387;
+    @media (prefers-color-scheme: dark) {
+        background-color: #461661;
+    }
     @media (orientation: portrait) {
         display: none;
     }
@@ -130,6 +149,9 @@ canvas {
     font-size: calc(1.2vh + 1.2vw);
     padding-bottom: 2vh;
     color: #d04747;
+    @media (prefers-color-scheme: dark) {
+        color: #D28DFA;
+    }
 }
 
 .deform_landing_dictionaryTextDefinitions {
@@ -148,6 +170,9 @@ canvas {
     }
     font-family: "Poppins-ExtraLight", sans-serif;
     color: #d04747;
+    @media (prefers-color-scheme: dark) {
+        color: #D28DFA;
+    }
 }
 
 .deform_landing_dictionaryTextDefinitions > .deform_landing_italics {
@@ -158,6 +183,9 @@ canvas {
         font-size: calc(0.4vh + 0.4vw);
     }
     color: #d04747;
+    @media (prefers-color-scheme: dark) {
+        color: #D28DFA;
+    }
 }
 
 .deform_landing_a_portfolio {
@@ -183,14 +211,20 @@ canvas {
     align-items: center;
     justify-content: space-evenly;
     background-color: #93FAA5;
+    @media (prefers-color-scheme: dark) {
+        background-color: #7C28AD;
+    }
     @media (orientation: portrait) {
         background-color: #d04747;
+        @media (prefers-color-scheme: dark) {
+            background-color: #7C28AD;
+        }
         filter: opacity(0.8)
     }
     filter: drop-shadow(0px 0px calc(0.5vh + 0.5vw) rgba(#d04747,0.3))
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) { //hover animation works only on desktop
     .deform_landing_a_portfolio:hover {
         animation-name: cta_fade_in;
         animation-duration: 1s;
@@ -220,6 +254,9 @@ canvas {
     bottom: 0px;
     font-family: "Poppins-ExtraLight", sans-serif;
     color: #d04747;
+    @media (prefers-color-scheme: dark) {
+        color: #D28DFA;
+    }
 }
 
 .deform_landing_cookiesText > #deform_landing_cookiesBold {
