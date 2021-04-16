@@ -27,7 +27,7 @@ body, html {
 .deform_landing_h2 {
     font-family: "Poppins-Medium", sans-serif;
     font-size: calc(0.85vh + 0.85vw);
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: 2300px) {
         font-size: calc(0.5vh + 0.5vw);
     }
     color: #d04747;
@@ -39,7 +39,7 @@ body, html {
 .deform_landing_h3 {
     font-family: "Poppins-ExtraLight", sans-serif;
     font-size: calc(0.75vh + 0.75vw);
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: 2300px) {
         font-size: calc(0.4vh + 0.4vw);
     }
     color: #d04747;
@@ -81,8 +81,11 @@ body, html {
 }
 
 canvas {
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: 2300px) {
         transform: scale(2); //the animation was becoming too small on high definition screens
+    }
+    @media screen and (min-width: 2000px) and (max-width: 2299px) {
+        transform: scale(1.5); //the animation was becoming too small on high definition screens
     }
 }
 
@@ -132,7 +135,7 @@ canvas {
     margin: calc(3vw + 3vh);
     position: absolute;
     bottom: 14vh;
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: 2300px) {
         bottom: 20vh;
     }
 }
@@ -165,7 +168,7 @@ canvas {
 .deform_landing_dictionaryTextDefinitions > .deform_landing_dictionaryTextDefinitionsNumber {
     width: 3vw;
     font-size: calc(0.5vh + 0.5vw);
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: 2300px) {
         font-size: calc(0.4vh + 0.4vw);
     }
     font-family: "Poppins-ExtraLight", sans-serif;
@@ -179,7 +182,7 @@ canvas {
     font-style: italic;
     font-family: "Poppins-ExtraLight", sans-serif;
     font-size: calc(0.7vh + 0.7vw);
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: 2300px) {
         font-size: calc(0.4vh + 0.4vw);
     }
     color: #d04747;
