@@ -347,12 +347,12 @@ body, html {
 }
 
 .deform_landing_a_portfolio > .deform_landing_a_portfolio_icon {
-  height: calc(2vh + 2vw);
+  height: calc(1.2vh + 1.2vw);
 }
 
 @media (orientation: portrait) {
   .deform_landing_a_portfolio > .deform_landing_a_portfolio_icon {
-    height: calc(4vh + 4vw);
+    height: calc(3vh + 3vw);
   }
 }
 
