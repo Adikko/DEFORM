@@ -364,7 +364,7 @@ body, html {
 
 @media (orientation: portrait) {
   .deform_landing_a_portfolio > .deform_landing_a_portfolio_cta {
-    font-size: calc(1.7vh + 1.7vw);
+    font-size: calc(1.5vh + 1.5vw);
   }
 }
 
